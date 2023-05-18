@@ -1,9 +1,6 @@
 from rest_framework import serializers
 from .models import Employee, Company, Asset, Device, DelegateDevice
 
-from rest_framework import serializers
-
-
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee

@@ -12,7 +12,7 @@ class Employee(models.Model):
 
 class Company(models.Model):
     name = models.CharField(max_length=255)
-    employees = models.ManyToManyField(Employee, related_name='companies')
+    employees = models.ManyToManyField(Employee, related_name='companies') #many to many relationship 
 
     class Meta:
         verbose_name_plural = 'Companies'
@@ -25,7 +25,7 @@ class Company(models.Model):
 class Device(models.Model):
       name = models.CharField(max_length=255)
       condition = models.CharField(max_length=255)
-      asset_type = models.ForeignKey('Asset', on_delete=models.CASCADE)
+      asset_type = models.ForeignKey('Asset', on_delete=models.CASCADE) #one to many relationship
       checked_in_at = models.DateTimeField(null=True, blank=True)
       checked_out_at = models.DateTimeField(null=True, blank=True)
       
@@ -37,7 +37,7 @@ class Device(models.Model):
 class Asset(models.Model):
     name = models.CharField(max_length=255)
     asset_type = models.CharField(max_length=255)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='assets')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='assets') 
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='assigned_assets')
     checked_in_at = models.DateTimeField(null=True, blank=True)
     checked_out_at = models.DateTimeField(null=True, blank=True)
