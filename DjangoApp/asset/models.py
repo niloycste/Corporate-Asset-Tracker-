@@ -12,7 +12,7 @@ class Employee(models.Model):
 
 class Company(models.Model):
     name = models.CharField(max_length=255)
-    employees = models.ManyToManyField(Employee, related_name='companies') #many to many relationship 
+    employees = models.ManyToManyField(Employee, related_name='companies')
 
     class Meta:
         verbose_name_plural = 'Companies'
@@ -25,7 +25,7 @@ class Company(models.Model):
 class Device(models.Model):
       name = models.CharField(max_length=255)
       condition = models.CharField(max_length=255)
-      asset_type = models.ForeignKey('Asset', on_delete=models.CASCADE) #one to many relationship
+      asset = models.ForeignKey('Asset', on_delete=models.CASCADE)
       checked_in_at = models.DateTimeField(null=True, blank=True)
       checked_out_at = models.DateTimeField(null=True, blank=True)
       
@@ -36,12 +36,12 @@ class Device(models.Model):
 
 class Asset(models.Model):
     name = models.CharField(max_length=255)
-    asset_type = models.CharField(max_length=255)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='assets') 
+    type = models.CharField(max_length=255)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='assets')
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='assigned_assets')
     checked_in_at = models.DateTimeField(null=True, blank=True)
     checked_out_at = models.DateTimeField(null=True, blank=True)
-    
+   
 
     def __str__(self):
         return self.name
@@ -50,7 +50,7 @@ class DelegateDevice(models.Model):
     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
-    delegation_date = models.DateTimeField(auto_now=True)
+    delegation_date = models.DateTimeField(auto_now_add=True)
 
     
 
