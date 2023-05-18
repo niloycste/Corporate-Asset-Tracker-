@@ -25,7 +25,7 @@ class Company(models.Model):
 class Device(models.Model):
       name = models.CharField(max_length=255)
       condition = models.CharField(max_length=255)
-      asset = models.ForeignKey('Asset', on_delete=models.CASCADE)
+      asset_type = models.ForeignKey('Asset', on_delete=models.CASCADE)
       checked_in_at = models.DateTimeField(null=True, blank=True)
       checked_out_at = models.DateTimeField(null=True, blank=True)
       

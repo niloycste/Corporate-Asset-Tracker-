@@ -18,12 +18,12 @@ class CompanyAdmin(admin.ModelAdmin):
 
 
 class AssetAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'type', 'company', 'employee', 'checked_out_at', 'checked_in_at')
+    list_display = ('id', 'name', 'asset_type', 'company', 'employee','checked_in_at', 'checked_out_at', )
     list_filter = ('company', 'employee')
 
 
 class DeviceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'condition', 'asset', 'checked_out_at', 'checked_in_at')
+    list_display = ('id', 'name', 'condition', 'asset_type', 'checked_in_at','checked_out_at', )
 
 
 class DelegateDeviceAdmin(admin.ModelAdmin):

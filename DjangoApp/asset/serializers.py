@@ -19,13 +19,13 @@ class CompanySerializer(serializers.ModelSerializer):
 class AssetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Asset
-        fields = ('id', 'name', 'type', 'company', 'employee', 'checked_in_at','checked_out_at', )
+        fields = ('id', 'name', 'asset_type', 'company', 'employee', 'checked_in_at','checked_out_at', )
 
 
 class DeviceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Device
-        fields = ('id', 'name', 'condition', 'asset','checked_in_at', 'checked_out_at', )
+        fields = ('id', 'name', 'condition', 'asset_type','checked_in_at', 'checked_out_at', )
 
 
 class DelegateDeviceSerializer(serializers.ModelSerializer):
