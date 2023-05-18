@@ -19,12 +19,7 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
-
     
-    
-
-      
-
 class Asset(models.Model):
     name = models.CharField(max_length=255)
     asset_type = models.CharField(max_length=255)
