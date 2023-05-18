@@ -1,5 +1,4 @@
 # REPLIQ-Django-Coding-Assessment-
-<<<<<<< HEAD
 In this project i implemented the key components required to track corporate assets and i created a project name "DjangoApp" and app name "Asset" 
 
 # Structure of this project
@@ -18,6 +17,4 @@ i wrote the business logic here for this project so that i can interact with the
 i customized the admin to get a better data visibility, filtering and searching and to enhance the user experience.
 
 =======
-## In this project i have implemented the key components required to track corporate assets.
-## please go to dev branch where i give a holistic review of my code and this project in a compendium way.  
->>>>>>> bc43e68cec82000dfbdb944978eccbc856a67315
+
