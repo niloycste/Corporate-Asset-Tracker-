@@ -2,14 +2,14 @@ from django.contrib import admin
 from .models import Employee, Company, Asset, Device, DelegateDevice
 
 
-# class EmployeeAdmin(admin.ModelAdmin):
-#     list_display = ('id', 'name', 'get_companies')
-#     list_filter = ('companies',)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'get_companies')
+    list_filter = ('companies',)
 
-#     def get_companies(self, obj):
-#         return ", ".join([str(company) for company in obj.companies.all()])
+    def get_companies(self, obj):
+        return ", ".join([str(company) for company in obj.companies.all()])
 
-#     get_companies.short_description = 'Companies'
+    get_companies.short_description = 'Companies'
 
 
 class CompanyAdmin(admin.ModelAdmin):
