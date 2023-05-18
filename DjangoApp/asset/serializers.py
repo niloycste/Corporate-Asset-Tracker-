@@ -19,7 +19,7 @@ class CompanySerializer(serializers.ModelSerializer):
 class AssetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Asset
-        fields = ('id', 'name', 'type', 'company', 'employee', 'checked_out_at', 'checked_in_at')
+        fields = ('id', 'name', 'type', 'company', 'employee', 'checked_in_at','checked_out_at', )
 
 
 class DeviceSerializer(serializers.ModelSerializer):

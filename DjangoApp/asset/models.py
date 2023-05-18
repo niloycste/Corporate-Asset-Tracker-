@@ -32,8 +32,9 @@ class Asset(models.Model):
     type = models.CharField(max_length=255)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='assets')
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='assigned_assets')
-    checked_out_at = models.DateTimeField(null=True, blank=True)
     checked_in_at = models.DateTimeField(null=True, blank=True)
+    checked_out_at = models.DateTimeField(null=True, blank=True)
+    
 
     def __str__(self):
         return self.name
