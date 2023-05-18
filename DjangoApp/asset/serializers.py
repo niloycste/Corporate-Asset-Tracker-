@@ -25,7 +25,7 @@ class AssetSerializer(serializers.ModelSerializer):
 class DeviceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Device
-        fields = ('id', 'name', 'condition', 'asset', 'checked_out_at', 'checked_in_at')
+        fields = ('id', 'name', 'condition', 'asset','checked_in_at', 'checked_out_at', )
 
 
 class DelegateDeviceSerializer(serializers.ModelSerializer):
