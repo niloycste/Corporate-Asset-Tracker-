@@ -1,4 +1,4 @@
-# REPLIQ-Django-Coding-Assessment-
+# Corporate Asset Tracker
 In this project i implemented the key components required to track corporate assets and i created a project name "DjangoApp" and app name "Asset" 
 
 # Structure of this project
